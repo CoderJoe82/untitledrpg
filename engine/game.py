@@ -8,8 +8,14 @@ class Game:
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
         self.running = True
-        self.title_screen = TitleScreen(self)
-        self.current_state = self.title_screen
+        self.game_states = {'title' : TitleScreen(self)}
+        self.current_state = None
+
+        self.change_game_state('title')
+
+    def change_game_state(self, state):
+        self.current_state = self.game_states[state]
+
 
     def run(self):
         while self.running:
