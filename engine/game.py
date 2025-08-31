@@ -1,6 +1,7 @@
 from settings import *
 import pygame
 from screens.title_screen import TitleScreen
+from screens.welcome_screen import WelcomeScreen
 
 class Game:
     def __init__(self):
@@ -8,7 +9,7 @@ class Game:
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
         self.running = True
-        self.game_states = {'title' : TitleScreen(self)}
+        self.game_states = {'title' : TitleScreen(self), 'welcome' : WelcomeScreen(self)}
         self.current_state = None
 
         self.change_game_state('title')

@@ -74,3 +74,5 @@ class TitleScreen(State):
                 if button.is_clicked(event, mouse_position):
                     if button.key_text == "quit":
                         self.game.running = False
+                    elif button.key_text == "new_game":
+                        self.game.change_game_state('welcome')
