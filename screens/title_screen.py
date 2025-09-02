@@ -37,17 +37,16 @@ class TitleScreen(State):
                     self.button_height,
                     display_text,
                     WHITE,  
-                    pygame.font.Font(None, 30),
+                    pygame.font.Font(FONT_PATH, 30),
                     SLATE_GRAY,
                     MOSSY_STONE,
                     key_text
                 )
             )
             self.current_y += self.button_height + self.button_padding
-            print(f"Key : {key}, Value : {value}\n")
 
     def _create_title(self):
-        self.title_font = pygame.font.Font(None, LARGE_FONT_SIZE)
+        self.title_font = pygame.font.Font(FONT_PATH, LARGE_FONT_SIZE)
         self.title_surface = self.title_font.render("Untitled RPG", True, WHITE)
         self.title_rect = self.title_surface.get_rect()
         self.title_rect.center = (self.surface.get_width() / 2, self.surface.get_height() * TITLE_SCREEN_TEXT_Y_POSITION)

@@ -1,0 +1,33 @@
+from settings import *
+
+game_welcome_message_text = [
+            ("Welcome, traveler. You will find no ancient prophecies in this land that speak of your coming. Your destiny is not written in the stars, and you are not a ", WHITE),
+            ("Chosen One ", GREEN),
+            ("meant to save the world.\n\nInstead, your story is your own to write. Will you be a celebrated ", WHITE),
+            ("champion", GOLDEN_SUNBEAM),
+            (", a feared ", WHITE),
+            ("scoundrel", RED),
+            (", a cunning ", WHITE),
+            ("merchant ", AGED_WOOD),
+            ("who builds an empire, or an explorer who vanishes into the ", WHITE),
+            ("wilds", MOSSY_STONE),
+            ("? The choice is yours and yours alone.\n\nThis is a world where towering ", WHITE),
+            ("forests ", FOREST_CANOPY),
+            ("stand in harmony with bustling ", WHITE),
+            ("cities", RIVER_STONE_BLUE),
+            (", where the old ways and new innovations live side-by-side. Nature and civilization are not at odds, but are threads woven into the same grand tapestry.\n\nWho will you be in this land? Perhaps one of the earthen ", WHITE),
+            ("Grave-touched", BLUE_GREEN,),
+            (", a steadfast people born of stone and riverbed, or the sun-kissed ", WHITE),
+            ("Solis ", GOLDEN_SUNBEAM),
+            ("with spirits as bright as their meadow homes. Or will you be one of the versatile ", WHITE),
+            ("Kaelen ", FOREST_CANOPY),
+            ("whose ancestors built the bridge between the wilds and the city walls\n\nWhatever your heritage, your path is your own. Will you be a stalwart ", WHITE),
+            ("warrior", RIVER_STONE_BLUE),
+            (", a dashing ", WHITE),
+            ("rogue", HEARTHFIRE_ORANGE),
+            (", a wise ", WHITE),
+            ("Way-speaker ", WILDFLOWER_PURPLE),
+            ("who listens to the whispers of the world, or a renowned ", WHITE),
+            ("Lore-keeper ", AGED_WOOD),
+            ("whose knowledge is sought by all?\n\nYour journey begins now.", WHITE)
+        ]
