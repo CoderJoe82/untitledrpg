@@ -76,3 +76,5 @@ class WelcomeScreen(State):
                 if button.is_clicked(event, mouse_position):
                     if button.key_text == 'go_back':
                         self.game.change_game_state('title')
+                    elif button.key_text == "create_character":
+                        self.game.change_game_state('character_creation')             
