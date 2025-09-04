@@ -24,30 +24,19 @@ class CharacterCreationScreen(State):
         }
         self.current_phase = 'race_selection'
         self._create_divider_line_dimensions()
+        self._create_character_creation_panel_dimensions()
+
+    def _create_character_creation_panel_dimensions(self):
+        pass
 
 
+    def _create_navigation_buttons(self):
+        self.navigation_buttons_names = {
+            'confirm' : "Confirm",
+            'go_back' : "Go Back"
+        }
+        self.navigation_buttons = []        
 
-# BEFORE YOU DO ANYTHING ELSE... 
-# GO THROUGH AND ADD THE REQUIRED WEAPON SKILL LEVEL TO UNLOCK ABILITIES FOR IT.
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-
-
-
-    
     def _create_divider_line_dimensions(self):
         game_window_width, game_window_height = self.character_creation_screen_size
         self.divider_line_one_starting_x = game_window_width * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_ONE_STARTING_X
@@ -94,22 +83,22 @@ class CharacterCreationScreen(State):
         self._draw_current_phase()
         pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_one_starting_x, self.divider_line_one_starting_y), (self.divider_line_one_ending_x, self.divider_line_one_ending_y), 2)
         pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_two_starting_x, self.divider_line_two_starting_y), (self.divider_line_two_ending_x, self.divider_line_two_ending_y), 2)
+        for index, value in enumerate(self.navigation_buttons):
+            button = value
+            button.draw(self.surface)
         self.game.screen.blit(self.surface, (0, 0))
 
     def handle_phase_events(self, events):
-        pass
-        # mouse_position = pygame.mouse.get_pos()
-        # event_phase = self.current_phase
-        # for event in events:
-        #     for index, value in enumerate(character_selection_screen_buttons):
-        #         button = value
-        #         if button.is_clicked(event, mouse_position):
-        #             if button.key_text == 'race_selection':
-        #                 self.current_phase = 'race_selection'
-        #             elif button.key_text == 'class_selection':
-        #                 self.current_phase = 'class_selection'
-        #             elif button.key_text == 'character_confirmation':
-        #                 self.current_phase = 'character_confirmation'
+        mouse_position = pygame.mouse.get_pos()
+        event_phase = self.current_phase
+        for event in events:
+            for index, value in enumerate(self.navigation_buttons):
+                button = value
+                if button.is_clicked(event, mouse_position):
+                    if button.key_text == 'go_back':
+                        self.game.change_game_state('welcome')
+                    elif button.key_text == 'confirm':
+                        self._update_current_phase()
 
     def handle_events(self, events):
         self.handle_phase_events(events)

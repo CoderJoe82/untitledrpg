@@ -99,6 +99,16 @@ SUMMON_POISON_WYRMLING = {
     }]
 }
 
+SUMMON_BRIAR_TENDER = {
+    'id': 'summon_briar_tender', 'display_name': 'Summon Briar Tender',
+    'description': 'Summons a passive nature spirit that does not attack, but periodically grows patches of grasping thorns under a random nearby enemy.',
+    'level_req': 24, 'skill_req': 30, 'mana_cost': 140, 'cooldown': 120.0, 'casting_time': 2.5, 'target_type': 'self', 'range': 0,
+    'effects': [{'type': 'summon_creature', 'creature_name': 'Briar Tender', 'duration': 45.0, 'health': 500,
+                 'attack_damage_min': 0, 'attack_damage_max': 0, 'attack_speed': 999, 'attack_range': 0,
+                 'abilities': [{'name': 'Grasping Thorns', 'type': 'active_ability', 'cooldown': 6.0, 'effect': 'ground_dot', 'damage_type': 'Nature', 'tick_damage': 8, 'duration': 8.0, 'radius': 4, 'debuff': 'slow', 'debuff_amount': 0.20}]
+    }]
+}
+
 # --- TIER 3 ---
 SUMMON_GRIZZLY_BEAR = {
     'id': 'summon_grizzly_bear', 'display_name': 'Summon Grizzly Bear',
@@ -160,6 +170,16 @@ SUMMON_BONE_GOLEM = {
     }]
 }
 
+SUMMON_BANSHEE = {
+    'id': 'summon_banshee', 'display_name': 'Summon Banshee',
+    'description': 'Summons a sorrowful spirit whose wailing aura weakens the resolve of nearby enemies, causing them to deal less damage.',
+    'level_req': 40, 'skill_req': 48, 'mana_cost': 210, 'cooldown': 180.0, 'casting_time': 3.0, 'target_type': 'aoe_ground', 'range': 20,
+    'effects': [{'type': 'summon_creature', 'creature_name': 'Wailing Banshee', 'duration': 60.0, 'health': 900,
+                 'attack_damage_min': 55, 'attack_damage_max': 65, 'attack_speed': 2.6, 'attack_range': 25,
+                 'abilities': [{'name': 'Aura of Despair', 'type': 'passive_aura', 'effect': 'debuff', 'stat': 'All_Damage_Dealt', 'amount': -0.10, 'radius': 15}]
+    }]
+}
+
 # --- TIER 4 ---
 SUMMON_LICH = {
     'id': 'summon_lich', 'display_name': 'Summon Lich',
@@ -216,6 +236,17 @@ SUMMON_ANIMATED_ARMOR = {
 #
 # =============================================================================
 
+# --- TIER 1 ---
+SUMMON_GIGGLING_VOIDLING = {
+    'id': 'summon_giggling_voidling', 'display_name': 'Summon Giggling Voidling',
+    'description': 'Summons a small, unstable creature of chaos. Its attacks have a chance to apply a random, minor debuff.',
+    'level_req': 14, 'skill_req': 18, 'mana_cost': 70, 'cooldown': 90.0, 'casting_time': 2.0, 'target_type': 'aoe_ground', 'range': 20,
+    'effects': [{'type': 'summon_creature', 'creature_name': 'Giggling Voidling', 'duration': 40.0, 'health': 250,
+                 'attack_damage_min': 12, 'attack_damage_max': 16, 'attack_speed': 2.0, 'attack_range': 'melee',
+                 'abilities': [{'name': 'Warping Touch', 'type': 'on_hit_proc', 'proc_chance': 0.25, 'effect': 'random_minor_debuff', 'possible_debuffs': ['slow', 'weakness', 'armor_reduction'], 'duration': 4.0}]
+    }]
+}
+
 # --- TIER 2 ---
 SUMMON_CHAOS_IMP = {
     'id': 'summon_chaos_imp', 'display_name': 'Summon Chaos Imp',
@@ -224,6 +255,17 @@ SUMMON_CHAOS_IMP = {
     'effects': [{'type': 'summon_creature', 'creature_name': 'Chaos Imp', 'duration': 60.0, 'health': 450,
                  'attack_damage_min': 10, 'attack_damage_max': 10, 'attack_speed': 1.5, 'attack_range': 25,
                  'abilities': [{'name': 'Wild Magic', 'type': 'active_ability', 'cooldown': 4.0, 'effect': 'random_elemental_bolt'}]
+    }]
+}
+
+# --- TIER 3 ---
+SUMMON_WARP_STALKER = {
+    'id': 'summon_warp_stalker', 'display_name': 'Summon Warp Stalker',
+    'description': 'Summons a predatory creature from the void. It has a chance with every attack to teleport to a new nearby enemy, making it difficult to pin down.',
+    'level_req': 44, 'skill_req': 52, 'mana_cost': 230, 'cooldown': 180.0, 'casting_time': 3.0, 'target_type': 'aoe_ground', 'range': 20,
+    'effects': [{'type': 'summon_creature', 'creature_name': 'Warp Stalker', 'duration': 60.0, 'health': 1300,
+                 'attack_damage_min': 65, 'attack_damage_max': 75, 'attack_speed': 2.1, 'attack_range': 'melee',
+                 'abilities': [{'name': 'Phase Strike', 'type': 'on_hit_proc', 'proc_chance': 0.35, 'effect': 'teleport_to_random_enemy', 'radius': 15}]
     }]
 }
 
@@ -248,5 +290,8 @@ SUMMONING_ABILITIES = {
     'summon_poison_wyrmling': SUMMON_POISON_WYRMLING, 'summon_grizzly_bear': SUMMON_GRIZZLY_BEAR, 'summon_spirit_beast': SUMMON_SPIRIT_BEAST,
     'raise_skeleton': RAISE_SKELETON, 'summon_shade': SUMMON_SHADE, 'summon_bone_golem': SUMMON_BONE_GOLEM, 'summon_lich': SUMMON_LICH,
     'summon_mana_wyrm': SUMMON_MANA_WYRM, 'summon_guardian_angel': SUMMON_GUARDIAN_ANGEL, 'summon_animated_armor': SUMMON_ANIMATED_ARMOR,
-    'summon_chaos_imp': SUMMON_CHAOS_IMP, 'summon_void_terror': SUMMON_VOID_TERROR,
+    'summon_chaos_imp': SUMMON_CHAOS_IMP, 'summon_void_terror': SUMMON_VOID_TERROR, 'summon_giggling_voidling': SUMMON_GIGGLING_VOIDLING,
+    'summon_briar_tender': SUMMON_BRIAR_TENDER,
+    'summon_banshee': SUMMON_BANSHEE,
+    'summon_warp_stalker': SUMMON_WARP_STALKER,
 }

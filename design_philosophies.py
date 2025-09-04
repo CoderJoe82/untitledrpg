@@ -82,6 +82,20 @@
 #     new abilities. Though some prestige classes will be unlockable through deed or 
 #     defeating end game 'bosses'
 #
+#   D. SUMMON LIMITS
+#   -----------------------
+#   - Every class that does not dedicate to, or isn't a summoner by default only gets
+#     one summon ever that they can have out at the same time. They will have their 
+#     main abilities still, but they will never be stronger like a summoner focused
+#     class or class that unlocks some prestige version can make them. This is both to
+#     ensure that summoners are masters of summoning and have their own place in the
+#     game, as well as make sure that any other class can still benefit from them for
+#     tactics or synergy that works with what summons can do. I.E. A frost mage might
+#     find a book or scroll, or be awarded a gem that lets them summon a frost baby
+#     drake or something similar that's frost related, and can do a flash freeze in
+#     an aoe area that's got a cooldown, and the frost mage can capitalize on that
+#     instead of having to waste a turn freezing the mobs themselves, like they have
+#     to do between cooldowns.
 #
 # -----------------------------------------------------------------------------
 # IV. FUTURE SYSTEMS TO IMPLEMENT
