@@ -1,6 +1,11 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.7
+---
+Added race selection phase buttons to the character select screen.
+Created a lot of dimensions for things to put onto the screen.
+
 V-0.0.6
 ---
 Added a UI_Panel class to be used on my character creation phases so I can give each one it's own dedicated area for buttons, one for the phase headers, and one for the display data for each phase.
