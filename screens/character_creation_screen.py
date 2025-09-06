@@ -47,37 +47,11 @@ class CharacterCreationScreen(State):
         self.data_display_data_panel_height = game_window_height * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_HEIGHT
 
     def _create_button_panel_button_dimensions(self):
-        self.button_panel_button_width = CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_WIDTH
-        self.button_panel_button_height = CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_HEIGHT
-        self.button_panel_button_x = CHARACTER_CREATION_SCREEN_BUTTON_PANEL_STARTING_X - (self.button_panel_button_width / 2)
-        self.button_panel_button_y = CHARACTER_CREATION_SCREEN_BUTTON_PANEL_STARTING_Y
-        self.button_panel_button_padding = CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_PADDING
-
-
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-# BRUH, GOTTA FIX THEM BUTTON POSITIONS!!!!!!
-
-
-
-
-
+        self.button_panel_button_width = self.button_ui_panel_width * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_WIDTH
+        self.button_panel_button_height = self.button_ui_panel_height * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_HEIGHT
+        self.button_panel_button_x = 20
+        self.button_panel_button_y = self.button_ui_panel_height * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_STARTING_Y
+        self.button_panel_button_padding = self.button_ui_panel_height * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_PADDING
         
     def _create_character_creation_panels(self):
         self.button_panel = UI_Panel(
@@ -116,7 +90,7 @@ class CharacterCreationScreen(State):
         race_data = list(ALL_RACES.values())
         self.number_of_race_buttons = len(race_data)
         self.full_height_of_race_buttons = (self.button_panel_button_height * self.number_of_race_buttons) + (self.button_panel_button_padding * (self.number_of_race_buttons - 1))
-        y = CHARACTER_CREATION_SCREEN_BUTTON_PANEL_STARTING_Y - (self.full_height_of_race_buttons / 2)
+        current_y = self.button_panel_button_y - (self.full_height_of_race_buttons / 2)
         for index, value in enumerate(race_data):
             race_data = value
             self.race_selection_names.append(
@@ -130,7 +104,7 @@ class CharacterCreationScreen(State):
             self.race_selection_buttons.append(
                 Button(
                     self.button_panel_button_x,
-                    y,
+                    current_y,
                     self.button_panel_button_width,
                     self.button_panel_button_height,
                     button_names['display_text'],
@@ -141,6 +115,7 @@ class CharacterCreationScreen(State):
                     button_names['key_text']
                 )
             )
+            current_y += self.button_panel_button_height + self.button_panel_button_padding
                 
 
     def _create_divider_line_dimensions(self):
