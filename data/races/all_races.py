@@ -1,3 +1,5 @@
+from settings import *
+
 HUMAN = {
     'id': 'human',
     'display_name': 'Human',
@@ -24,7 +26,8 @@ HUMAN = {
             'name': 'Quick Learner',
             'description': 'You gain experience points at a slightly faster rate.'
         }
-    ]
+    ],
+    'font_color' : SOLAR_FLARE
 }
 
 ELF = {
@@ -54,7 +57,8 @@ ELF = {
             'name': 'Keen Senses',
             'description': 'You have a higher chance to detect hidden traps and secrets in the world.'
         }
-    ]
+    ],
+    'font_color' : BRIGHT_LEAF
 }
 
 DWARF = {
@@ -84,7 +88,8 @@ DWARF = {
             'name': 'Master Craftsman',
             'description': 'You are more effective at smithing and enchanting items.'
         }
-    ]
+    ],
+    'font_color' : EMBERGLOW
 }
 
 KAELEN = {
@@ -105,7 +110,8 @@ KAELEN = {
             'name': 'Natural Diplomat',
             'description': 'You gain better prices from merchants and more favorable outcomes in some dialogues.'
         }
-    ]
+    ],
+    'font_color' : SKYFORGE_BLUE
 }
 
 SOLIS = {
@@ -125,12 +131,13 @@ SOLIS = {
             'name': 'Sun-Kissed',
             'description': 'You move slightly faster during the day and have a natural affinity for light-based magic.'
         }
-    ]
+    ],
+    'font_color' : RADIANT_GOLD
 }
 
-GRAVE_TOUCHED = {
-    'id': 'grave_touched',
-    'display_name': 'Grave-touched',
+STONEBORN = {
+    'id': 'stoneborn',
+    'display_name': 'Stoneborn',
     'description': (
         "Born of stone and soil, the Grave-touched are a steadfast and patient people, "
         "akin to the Dwarves of the deep earth. They see time not in years, but in ages, "
@@ -145,7 +152,8 @@ GRAVE_TOUCHED = {
             'name': "Stone's Endurance",
             'description': 'You have a higher resistance to being knocked down or staggered.'
         }
-    ]
+    ],
+    'font_color' : SANDSTONE_OCHRE
 }
 
 SYLVAN = {
@@ -165,7 +173,8 @@ SYLVAN = {
             'name': 'Natural Vigor',
             'description': 'You slowly regenerate a small amount of health over time when outdoors.'
         }
-    ]
+    ],
+    'font_color' : ARCANE_ORCHID
 }
 
 ALL_RACES = {
@@ -174,6 +183,6 @@ ALL_RACES = {
     'dwarf': DWARF,
     'kaelen': KAELEN,
     'solis': SOLIS,
-    'grave_touched': GRAVE_TOUCHED,
+    'stoneborn': STONEBORN,
     'sylvan': SYLVAN,
 }

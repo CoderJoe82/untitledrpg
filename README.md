@@ -1,6 +1,10 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.11
+---
+Got my Button class refactored to incorporate the draw formatted text function.
+
 V-0.0.10
 ---
 Finished refactoring my draw formatted text function.

@@ -3,6 +3,7 @@ from settings import *
 from screens.button import Button
 from data.races.all_races import ALL_RACES
 from screens.character_creation_phases.character_creation_phase import CharacterCreationPhase
+from engine.utils import draw_formatted_text
 
 class RaceSelectionPhase(CharacterCreationPhase):
     def __init__(self, screen_manager):
@@ -22,7 +23,8 @@ class RaceSelectionPhase(CharacterCreationPhase):
             self.race_selection_names.append(
                 {
                     'key_text' : race_data['id'],
-                    'display_text' : race_data['display_name']
+                    'display_text' : race_data['display_name'],
+                    'font_color' : race_data['font_color']
                 }
             )
         for index, value in enumerate(self.race_selection_names):
@@ -33,7 +35,7 @@ class RaceSelectionPhase(CharacterCreationPhase):
                     current_y,
                     self.manager.button_panel_button_width,
                     self.manager.button_panel_button_height,
-                    button_names['display_text'],
+                    [[(button_names['display_text'][0], button_names['font_color']), (button_names['display_text'][1:], WHITE)]],
                     WHITE,
                     pygame.font.Font(FONT_PATH, CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_FONT_SIZE),
                     SLATE_GRAY,

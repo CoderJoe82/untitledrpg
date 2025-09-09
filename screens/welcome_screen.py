@@ -49,6 +49,7 @@ class WelcomeScreen(State):
                     SLATE_GRAY,
                     MOSSY_STONE,
                     key_text
+                    # self, x, y, width, height, text_to_format, text_color, font, base_color, hover_color, key_text = "default"
                 )
             )
             self.current_x += self.button_width + (SCREEN_WIDTH * self.button_padding)
