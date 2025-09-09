@@ -3,7 +3,7 @@ Using AI to help mentor me to make an rpg game so I learn how to do this with as
 
 V-0.0.11
 ---
-Got my Button class refactored to incorporate the draw formatted text function.
+Got my Button class refactored to incorporate the draw formatted text function. 
 
 V-0.0.10
 ---
