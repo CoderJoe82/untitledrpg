@@ -16,6 +16,7 @@ class CharacterCreationScreen(State):
         self._create_button_panel_button_dimensions()
         self._create_divider_line_dimensions()
         self._create_character_creation_panels()
+        self._create_navigation_button_dimensions()
         self.phases = {
             'race_selection' : RaceSelectionPhase(self),
             'class_selection' : {
@@ -40,13 +41,12 @@ class CharacterCreationScreen(State):
         self.phase_title_panel_width = game_window_width * CHARACTER_CREATION_SCREEN_PHASE_TITLE_PANEL_WIDTH
         self.phase_title_panel_height = game_window_height * CHARACTER_CREATION_SCREEN_PHASE_TITLE_PANEL_HEIGHT
         self.data_display_data_panel_x = game_window_width * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_STARTING_X
-        self.data_display_data_panel_y = game_window_width * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_STARTING_Y
+        self.data_display_data_panel_y = game_window_height * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_STARTING_Y
         self.data_display_data_panel_width = game_window_width * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_WIDTH
         self.data_display_data_panel_height = game_window_height * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_HEIGHT
         
     def _create_character_creation_panels(self):
         self.button_panel = UI_Panel(
-            # x, y, width, height, background_color
             self.button_ui_panel_x,
             self.button_ui_panel_y,
             self.button_ui_panel_width,
@@ -85,6 +85,13 @@ class CharacterCreationScreen(State):
         self.button_panel_button_x = (self.button_ui_panel_width * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_STARTING_X) - (self.button_panel_button_width / 2)
         self.button_panel_button_y = self.button_ui_panel_height * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_STARTING_Y
         self.button_panel_button_padding = self.button_ui_panel_height * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_PADDING
+
+    def _create_navigation_button_dimensions(self):
+        self.navigation_button_width = self.data_display_data_panel_width * CHARACTER_CREATION_SCREEN_NAVIGATION_BUTTON_WIDTH
+        self.navigation_button_height = self.data_display_data_panel_height * CHARACTER_CREATION_SCREEN_NAVIGATION_BUTTON_HEIGHT
+        self.navigation_starting_y = self.data_display_data_panel_y + (self.data_display_data_panel_height * CHARACTER_CREATION_SCREEN_NAVIGATION_BUTTON_Y)
+        self.navigation_starting_x = self.data_display_data_panel_x + (self.data_display_data_panel_width * CHARACTER_CREATION_SCREEN_NAVIGATION_BUTTON_X)
+        self.navigation_button_padding = self.data_display_data_panel_width * CHARACTER_CREATION_SCREEN_NAVIGATION_BUTTON_PADDING
 
     def update(self):
         self.phases[self.current_phase].update()
