@@ -1,6 +1,10 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.13
+---
+Finished up race selection phase header title. Refactored and removed a couple variables in settings.py that I was no longer using.
+
 V-0.0.12
 ---
 Added the navigation buttons to race selection phase.

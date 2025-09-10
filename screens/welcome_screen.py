@@ -23,23 +23,25 @@ class WelcomeScreen(State):
     def _create_welcome_screen_button_dimensions(self):
         self.button_height = WELCOME_SCREEN_BUTTON_HEIGHT
         self.button_width = WELCOME_SCREEN_BUTTON_WIDTH
-        self.button_x_location = SCREEN_WIDTH * WELCOME_SCREEN_BUTTON_X_POSITION
-        self.button_y_location = (self.surface.get_height() * WELCOME_SCREEN_BUTTON_Y_POSITION) - (self.button_height / 2)
         self.button_padding = WELCOME_SCREEN_BUTTON_PADDING
+        self.button_y_location = (self.surface.get_height() * WELCOME_SCREEN_BUTTON_Y_POSITION) - (self.button_height / 2)
 
     def _create_welcome_screen_buttons(self):
+        game_window_width, game_window_height = self.welcome_screen_size
         self.welcome_screen_button_names = {
             'create_character' : "Create Character",
             'go_back' : "Go Back"
         }
         self.welcome_screen_buttons = []
-        self.current_x = self.button_x_location
+        self.total_number_of_buttons = len(self.welcome_screen_button_names)
+        self.total_width_of_buttons_and_padding = (self.button_width * self.total_number_of_buttons) + (self.button_padding * (self.total_number_of_buttons - 1))
+        current_x = (game_window_width * WELCOME_SCREEN_BUTTON_X_POSITION) - (self.total_width_of_buttons_and_padding / 2)
         for key, value in self.welcome_screen_button_names.items():
             key_text = key
             display_text = value
             self.welcome_screen_buttons.append(
                 Button(
-                    self.current_x,
+                    current_x,
                     self.button_y_location,
                     self.button_width,
                     self.button_height,
@@ -52,8 +54,7 @@ class WelcomeScreen(State):
                     # self, x, y, width, height, text_to_format, text_color, font, base_color, hover_color, key_text = "default"
                 )
             )
-            self.current_x += self.button_width + (SCREEN_WIDTH * self.button_padding)
-            print(f'current_x : {self.current_x}\n')
+            current_x += self.button_width + (game_window_width * self.button_padding)
 
     def update(self):
         mouse_position = pygame.mouse.get_pos()

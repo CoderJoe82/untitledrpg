@@ -67,6 +67,7 @@ class CharacterCreationScreen(State):
             self.data_display_data_panel_height,
             CHARCOAL_SLATE
         )
+        print(f"Data Display Panel Rect in Manager: {self.data_display_panel.rect}")
 
     def _create_divider_line_dimensions(self):
         game_window_width, game_window_height = self.character_creation_screen_size
@@ -75,9 +76,9 @@ class CharacterCreationScreen(State):
         self.divider_line_one_ending_x = game_window_width * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_ONE_ENDING_X
         self.divider_line_one_ending_y = game_window_height
         self.divider_line_two_starting_x = game_window_width * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_TWO_STARTING_X
-        self.divider_line_two_starting_y = SCREEN_HEIGHT * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_TWO_STARTING_Y
+        self.divider_line_two_starting_y = game_window_height * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_TWO_STARTING_Y
         self.divider_line_two_ending_x = game_window_width
-        self.divider_line_two_ending_y = SCREEN_HEIGHT * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_TWO_STARTING_Y
+        self.divider_line_two_ending_y = game_window_height * CHARACTER_CREATION_SCREEN_DIVIDER_LINE_TWO_STARTING_Y
 
     def _create_button_panel_button_dimensions(self):
         self.button_panel_button_width = self.button_ui_panel_width * CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_WIDTH
@@ -105,6 +106,7 @@ class CharacterCreationScreen(State):
         self.phase_title_panel.draw(self.surface)
         self.data_display_panel.draw(self.surface)
         pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_one_starting_x, self.divider_line_one_starting_y), (self.divider_line_one_ending_x, self.divider_line_one_ending_y), 2)
+        print(f"Divider Line 2 Y-position: {self.divider_line_two_starting_y}") 
         pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_two_starting_x, self.divider_line_two_starting_y), (self.divider_line_two_ending_x, self.divider_line_two_ending_y), 2)
         self.draw_current_phase()
         self.game.screen.blit(self.surface, (0, 0))        

@@ -19,7 +19,7 @@ HUMAN = {
         'faith': 1,
     },
     'resistances': {
-        # Humans have no outstanding natural resistances.
+        'bonuses' : "Humans have no inborn racial resistance modifiers"
     },
     'abilities': [
         {

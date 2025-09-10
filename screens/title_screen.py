@@ -1,21 +1,24 @@
+import pygame
 from settings import *
 from engine.state import State
 from screens.button import Button
+from engine.utils import draw_formatted_text
 
 class TitleScreen(State):
     def __init__(self, game):
         super().__init__(game)
         self.title_screen_size = self.game.screen.get_size()
         self.surface = pygame.Surface(self.title_screen_size)
-        self._create_title()
+        self._create_title_rect()
         self._create_title_screen_button_dimensions()
         self._create_title_screen_buttons()
 
     def _create_title_screen_button_dimensions(self):
+        game_window_width, game_window_height = self.title_screen_size
         self.button_height = TITLE_SCREEN_BUTTON_HEIGHT
         self.button_width = TITLE_SCREEN_BUTTON_WIDTH
         self.button_x_location = (self.surface.get_width() / 2) - (self.button_width / 2)
-        self.button_y_location = SCREEN_HEIGHT * TITLE_SCREEN_BUTTON_Y_POSITION
+        self.button_y_location = game_window_height * TITLE_SCREEN_BUTTON_Y_POSITION
         self.button_padding = TITLE_SCREEN_BUTTON_PADDING
 
     def _create_title_screen_buttons(self):
@@ -45,11 +48,14 @@ class TitleScreen(State):
             )
             self.current_y += self.button_height + self.button_padding
 
-    def _create_title(self):
+    # def _create_title(self):
+    def _create_title_rect(self):
+        game_window_width, game_window_height = self.title_screen_size
+        self.title_rect = pygame.Rect(game_window_width * TITLE_SCREEN_TITLE_RECT_X, game_window_height * TITLE_SCREEN_TITLE_RECT_Y, game_window_width * TITLE_SCREEN_TITLE_RECT_WIDTH, game_window_height * TITLE_SCREEN_TITLE_RECT_HEIGHT)
+        self.title_rect_text = "Untitled RPG"
         self.title_font = pygame.font.Font(FONT_PATH, LARGE_FONT_SIZE)
-        self.title_surface = self.title_font.render("Untitled RPG", True, WHITE)
-        self.title_rect = self.title_surface.get_rect()
-        self.title_rect.center = (self.surface.get_width() / 2, self.surface.get_height() * TITLE_SCREEN_TEXT_Y_POSITION)
+        self.title_rect_alignment = "center"
+        self.title_rect_vert_alignment = "center"
 
     def update(self):
         mouse_position = pygame.mouse.get_pos()
@@ -59,7 +65,7 @@ class TitleScreen(State):
 
     def draw(self, screen):
         self.surface.fill(CHARCOAL_SLATE)
-        self.surface.blit(self.title_surface, self.title_rect)
+        draw_formatted_text(self.surface, [[(self.title_rect_text, WHITE)]], self.title_rect, self.title_font, self.title_rect_alignment, self.title_rect_vert_alignment)
         for index, value in enumerate(self.title_screen_buttons):
             button = value
             button.draw(self.surface)

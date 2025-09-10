@@ -60,7 +60,7 @@ if __name__ == '__main__':
 #
 # 1. Constants File (e.g., settings.py)
 #    - Create a separate file for global variables that don't change.
-#    - Examples: SCREEN_WIDTH, SCREEN_HEIGHT, FPS, COLORS, TILE_SIZE.
+#    - Examples: FPS, COLORS, TILE_SIZE.
 #    - Import these constants where needed to avoid 'magic numbers'.
 #
 # 2. Data-Driven Design
