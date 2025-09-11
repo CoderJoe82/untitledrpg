@@ -21,7 +21,7 @@ ARCANE_INTELLECT = {
     'id': 'arcane_intellect', 'display_name': 'Arcane Intellect',
     'description': 'Magically enhances the mind of a friendly target, increasing their Intellect for a very long duration.',
     'level_req': 4, 'mana_cost': 20, 'cooldown': 0.0, 'casting_time': 1.0, 'target_type': 'single', 'range': 30,
-    'effects': [{'type': 'buff', 'stat': 'int', 'amount': 10, 'duration': 1800.0}] # 30 minutes
+    'effects': [{'type': 'buff', 'stat': 'intellect', 'amount': 10, 'duration': 1800.0}] # 30 minutes
 }
 
 MANA_SHIELD = {

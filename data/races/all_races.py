@@ -10,11 +10,11 @@ HUMAN = {
         "the time they have. They are a true 'jack-of-all-trades'."
     ),
     'stats': {
-        'str': 1,
-        'dex': 1,
-        'con': 1,
-        'int': 1,
-        'wis': 1,
+        'strength': 1,
+        'dexterity': 1,
+        'constitution': 1,
+        'intellect': 1,
+        'wisdom': 1,
         'charisma': 1,
         'faith': 1,
     },
@@ -40,11 +40,11 @@ ELF = {
         "they are simply more deliberate, viewing time in centuries, not years."
     ),
     'stats': {
-        'str': 0,
-        'dex': 2,      # Bonus reflects their natural agility
-        'con': -1,     # Penalty reflects their slender build
-        'int': 1,
-        'wis': 1,
+        'strength': 0,
+        'dexterity': 2,      # Bonus reflects their natural agility
+        'constitution': -1,     # Penalty reflects their slender build
+        'intellect': 1,
+        'wisdom': 1,
         'charisma': 0,
         'faith': 0,
     },
@@ -71,11 +71,11 @@ DWARF = {
         "quality of their craft. To a Dwarf, a promise is as unbreakable as steel."
     ),
     'stats': {
-        'str': 2,      # Bonus reflects their powerful build
-        'dex': -1,
-        'con': 2,      # Bonus reflects their hardiness
-        'int': 0,
-        'wis': 0,
+        'strength': 2,      # Bonus reflects their powerful build
+        'dexterity': -1,
+        'constitution': 2,      # Bonus reflects their hardiness
+        'intellect': 0,
+        'wisdom': 0,
         'charisma': -1,
         'faith': 0,
     },
@@ -102,7 +102,7 @@ KAELEN = {
         "spirit and ability to find common ground."
     ),
     'stats': {
-        'str': 0, 'dex': 0, 'con': 0, 'int': 0, 'wis': 1, 'charisma': 2, 'faith': 0,
+        'strength': 0, 'dexterity': 0, 'constitution': 0, 'intellect': 0, 'wisdom': 1, 'charisma': 2, 'faith': 0,
     },
     'resistances': { 'spirit': 10 },
     'abilities': [
@@ -123,7 +123,7 @@ SOLIS = {
         "every day is a gift to be filled with light and purpose."
     ),
     'stats': {
-        'str': -1, 'dex': 2, 'con': -1, 'int': 0, 'wis': 1, 'charisma': 1, 'faith': 1,
+        'strength': -1, 'dexterity': 2, 'constitution': -1, 'intellect': 0, 'wisdom': 1, 'charisma': 1, 'faith': 1,
     },
     'resistances': { 'light': 15, 'nature': 5 },
     'abilities': [
@@ -144,7 +144,7 @@ STONEBORN = {
         "and are master artisans, shaping the raw materials of the world with reverence."
     ),
     'stats': {
-        'str': 1, 'dex': -2, 'con': 2, 'int': 0, 'wis': 1, 'charisma': 0, 'faith': 1,
+        'strength': 1, 'dexterity': -2, 'constitution': 2, 'intellect': 0, 'wisdom': 1, 'charisma': 0, 'faith': 1,
     },
     'resistances': { 'poison': 20, 'physical': 5 },
     'abilities': [
@@ -165,7 +165,7 @@ SYLVAN = {
         "They are deeply wise, seeing the world as a single, interconnected organism."
     ),
     'stats': {
-        'str': 0, 'dex': 0, 'con': 1, 'int': 0, 'wis': 2, 'charisma': -1, 'faith': 1,
+        'strength': 0, 'dexterity': 0, 'constitution': 1, 'intellect': 0, 'wisdom': 2, 'charisma': -1, 'faith': 1,
     },
     'resistances': { 'nature': 20, 'poison': 10 },
     'abilities': [

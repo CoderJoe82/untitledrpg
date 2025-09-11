@@ -8,7 +8,7 @@ WARRIOR = {
         "cleaving through enemy lines."
     ),
     'stats': {
-        'str': 3, 'dex': 1, 'con': 2, 'int': 0, 'wis': 0, 'charisma': 0, 'faith': 0,
+        'strength': 3, 'dexterity': 1, 'constitution': 2, 'intellect': 0, 'wisdom': 0, 'charisma': 0, 'faith': 0,
     },
     'resistances': {
         'Toughness': 15, # The defining trait of a Warrior
@@ -26,7 +26,7 @@ MAGE = {
         "distance while unleashing devastating spells of fire, frost, and lightning."
     ),
     'stats': {
-        'str': 0, 'dex': 0, 'con': 0, 'int': 4, 'wis': 2, 'charisma': 0, 'faith': 0,
+        'strength': 0, 'dexterity': 0, 'constitution': 0, 'intellect': 4, 'wisdom': 2, 'charisma': 0, 'faith': 0,
     },
     'resistances': {
         'Frost': 10,
@@ -45,7 +45,7 @@ PALADIN = {
         "innocent, smite their enemies, and inspire their allies with righteous power."
     ),
     'stats': {
-        'str': 2, 'dex': 0, 'con': 1, 'int': 0, 'wis': 1, 'charisma': 1, 'faith': 2,
+        'strength': 2, 'dexterity': 0, 'constitution': 1, 'intellect': 0, 'wisdom': 1, 'charisma': 1, 'faith': 2,
     },
     'resistances': {
         'Toughness': 5,
@@ -65,7 +65,7 @@ RANGER = {
         "and their deadly aim to eliminate threats before they ever get close."
     ),
     'stats': {
-        'str': 1, 'dex': 3, 'con': 1, 'int': 0, 'wis': 2, 'charisma': 0, 'faith': 0,
+        'strength': 1, 'dexterity': 3, 'constitution': 1, 'intellect': 0, 'wisdom': 2, 'charisma': 0, 'faith': 0,
     },
     'resistances': {
         'Toughness': 2, # A small amount from a rugged life
@@ -84,7 +84,7 @@ DRUID = {
         "and the fury of storms. They can be a gentle healer or a fearsome opponent."
     ),
     'stats': {
-        'str': 1, 'dex': 0, 'con': 1, 'int': 1, 'wis': 2, 'charisma': 0, 'faith': 2,
+        'strength': 1, 'dexterity': 0, 'constitution': 1, 'intellect': 1, 'wisdom': 2, 'charisma': 0, 'faith': 2,
     },
     'resistances': {
         'Nature': 20,
@@ -103,7 +103,7 @@ PRIEST = {
         "wounds, purge darkness, and shield their allies from harm."
     ),
     'stats': {
-        'str': 0, 'dex': 0, 'con': 1, 'int': 1, 'wis': 2, 'charisma': 1, 'faith': 3,
+        'strength': 0, 'dexterity': 0, 'constitution': 1, 'intellect': 1, 'wisdom': 2, 'charisma': 1, 'faith': 3,
     },
     'resistances': {
         'Light': 10,

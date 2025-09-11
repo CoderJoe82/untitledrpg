@@ -1,7 +1,5 @@
 import pygame
 
-import pygame
-
 def draw_formatted_text(surface, text_segments, rect, font, alignment="left", vert_alignment="top"): # NEW: Added vert_alignment
     all_words = []
     for segment_list in text_segments:
@@ -71,3 +69,75 @@ def draw_formatted_text(surface, text_segments, rect, font, alignment="left", ve
             current_x += rendered_text.get_width()
             
         current_y += font_height
+
+    return current_y
+
+def measure_formatted_text(text_segments, rect, font): # NEW: Added vert_alignment
+    all_words = []
+    for segment_list in text_segments:
+        for text, color in segment_list:
+            words = text.split(' ')
+            for i, word in enumerate(words):
+                if "\n" in word:
+                    parts = word.split('\n')
+                    for j, part in enumerate(parts):
+                        if part:
+                            all_words.append((part, color))
+                        if j < len(parts) - 1:
+                            all_words.append(('\n', color))
+                else:
+                    all_words.append((word, color))
+                
+                if i < len(words) - 1:
+                    all_words.append((' ', color))
+
+    all_lines = []
+    current_line = []
+    current_line_width = 0
+    space_width, _ = font.size(' ')
+
+    for word, color in all_words:
+        if word == '\n':
+            all_lines.append(current_line)
+            current_line = []
+            current_line_width = 0
+            continue
+        
+        word_width, _ = font.size(word)
+        
+        if current_line_width + word_width <= rect.width:
+            current_line.append((word, color))
+            current_line_width += word_width
+        else:
+            all_lines.append(current_line)
+            current_line = [(word, color)]
+            current_line_width = word_width
+
+    all_lines.append(current_line)
+
+    return font.get_height() * len(all_lines)
+
+
+# def draw_formatted_text(surface, text_segments, rect, font, alignment="left", vert_alignment="top"): # NEW: Added vert_alignment
+#     all_words = []
+#     for segment_list in text_segments:
+#         for text, color in segment_list:
+#             words = text.split(' ')
+#             for i, word in enumerate(words):
+#                 if "\n" in word:
+#                     parts = word.split('\n')
+#                     for j, part in enumerate(parts):
+#                         if part:
+#                             all_words.append((part, color))
+#                         if j < len(parts) - 1:
+#                             all_words.append(('\n', color))
+#                 else:
+#                     all_words.append((word, color))
+                
+#                 if i < len(words) - 1:
+#                     all_words.append((' ', color))
+
+#     all_lines = []
+#     current_line = []
+#     current_line_width = 0
+#     space_width, _ = font.size(' ')
