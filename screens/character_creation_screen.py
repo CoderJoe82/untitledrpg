@@ -67,7 +67,6 @@ class CharacterCreationScreen(State):
             self.data_display_data_panel_height,
             CHARCOAL_SLATE
         )
-        print(f"Data Display Panel Rect in Manager: {self.data_display_panel.rect}")
 
     def _create_divider_line_dimensions(self):
         game_window_width, game_window_height = self.character_creation_screen_size
@@ -105,10 +104,9 @@ class CharacterCreationScreen(State):
         self.button_panel.draw(self.surface)
         self.phase_title_panel.draw(self.surface)
         self.data_display_panel.draw(self.surface)
-        pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_one_starting_x, self.divider_line_one_starting_y), (self.divider_line_one_ending_x, self.divider_line_one_ending_y), 2)
-        print(f"Divider Line 2 Y-position: {self.divider_line_two_starting_y}") 
-        pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_two_starting_x, self.divider_line_two_starting_y), (self.divider_line_two_ending_x, self.divider_line_two_ending_y), 2)
         self.draw_current_phase()
+        pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_two_starting_x, self.divider_line_two_starting_y), (self.divider_line_two_ending_x, self.divider_line_two_ending_y), 2)
+        pygame.draw.line(self.surface, SLATE_GRAY, (self.divider_line_one_starting_x, self.divider_line_one_starting_y), (self.divider_line_one_ending_x, self.divider_line_one_ending_y), 2)
         self.game.screen.blit(self.surface, (0, 0))        
 
     def handle_events(self, events):

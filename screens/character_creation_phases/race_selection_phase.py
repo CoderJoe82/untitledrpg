@@ -16,6 +16,8 @@ class RaceSelectionPhase(CharacterCreationPhase):
             self.manager.data_display_data_panel_y,
             self.manager.data_display_data_panel_width,
             self.manager.data_display_data_panel_height,
+            self.manager.navigation_starting_y,
+            self.manager.character_creation_screen_size
         )
         self.race_data = list(ALL_RACES.values())
         self._create_race_selection_buttons()
@@ -153,3 +155,6 @@ class RaceSelectionPhase(CharacterCreationPhase):
                 if button.is_clicked(event, mouse_position):
                     if button.key_text == "go_back":
                         self.manager.game.change_game_state("welcome")
+            for button in self.race_selection_buttons:
+                if button.is_clicked(event, mouse_position):
+                    self.info_panel_data.set_current_race(button.key_text)
