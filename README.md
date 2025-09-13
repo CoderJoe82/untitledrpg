@@ -1,6 +1,10 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.15
+---
+No real updates. This is just lots of refactoring
+
 V-0.0.14
 ---
 Added both Race descriptions and Race bonus stats to the race selection phase

@@ -18,7 +18,51 @@ class RaceDataPanel:
         self.rect = pygame.Rect(self.panel_x, self.panel_y, self.panel_width, self.panel_height)
         self.rect_font = pygame.font.Font(FONT_PATH, CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_FONT_SIZE)
         self.data_display_details_font = pygame.font.Font(FONT_PATH, CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_DESCRIPTION_FONT_SIZE)
-        print(f"Race Info Panel Rect: {self.rect}")
+        self.race_info = {
+            'header' : self.current_race['display_name'],
+            'description' : self.current_race['description'],
+            'stat_modifiers' : self.current_race['stats'],
+            'resistances' : self.current_race['resistances'],
+            'abilities' : self.current_race['abilities'],
+            'font_color' : self.current_race['font_color']
+        }
+
+    def _get_text_measurements(text, rect, font):
+        measure_formatted_text(text, rect, font)
+
+    def _create_temp_rect(self, height):
+        x = self.rect.x + self.panel_padding
+        y = self.current_y
+        width = self.rect.width - (self.panel_padding * 2)
+        height = height
+        return pygame.Rect(x, y, width, height)
+
+    def _create_all_ui(self):
+        self.display_rect = self._create_temp_rect(
+            (self.navigation_starting_y - self.rect.y) - (self.panel_padding * 2)
+        )
+        self.header_rect = self._create_temp_rect(
+            measure_formatted_text([[(self.race_info['header'], self.race_info['font_color'])]], self._create_temp_rect(self.current_y, 100), self.data_display_details_font)
+        )
+        self.header_rect.width = self.data_display_details_font.size(self.race_info['header'])[0]
+        self._create_header_underline_dimensions()
+        self.current_y += self.header_rect.height + (CHARACTER_CREATION_SCREEN_HEADER_UNDERLINE_HEIGHT * 2)
+        self.description_rect = self._create_temp_rect(
+            measure_formatted_text([[(self.race_info['description'], self.race_info['font_color'])]], self._create_temp_rect(self.current_y, 100), self.data_display_details_font)
+        )
+        self.current_y += self.description_rect.height + self.panel_padding
+
+        ######## THIS IS WHERE WE LEFT OFF #############
+
+
+
+    def _create_display_rect(self):
+        self.display_rect = pygame.Rect(
+            self.rect.x + self.panel_padding,
+            self.rect.y + self.panel_padding,
+            self.rect.width - (self.panel_padding * 2),
+            (self.navigation_starting_y - self.rect.y) - (self.panel_padding * 2),
+        )
 
     def _create_text_rect(self):
         self.text_rect_x = self.rect.x + self.panel_padding
@@ -37,11 +81,9 @@ class RaceDataPanel:
         self.race_header_rect = pygame.Rect(self.header_text_rect_x, self.header_text_rect_y, self.header_text_rect_width, self.header_text_rect_height)
 
     def _create_header_underline_dimensions(self):
-        self.race_header_underline_buffer = self.text_rect.height * CHARACTER_CREATION_SCREEN_DISPLAY_DATA_PANEL_HEADER_TEXT_UNDERLINE
-        self.race_header_width, self.race_header_height = self.rect_font.size(self.current_race['display_name'])
-        self.race_header_underline_starting_x = self.text_rect_x
-        self.race_header_underline_starting_y = self.header_text_rect_y + self.race_header_height
-        self.race_header_underline_ending_x = self.text_rect_x + self.race_header_width
+        self.header_underline_starting_x = self.text_rect_x
+        self.header_underline_starting_y = self.current_y
+        self.header_underline_ending_x = self.header_rect.width
     
     def _create_race_display_description_rect(self):
         self.race_display_description_rect_x = self.text_rect_x
@@ -81,6 +123,7 @@ class RaceDataPanel:
 
     def _setup_character_display_ui_section(self):
         self._create_text_rect()
+        self.current_y = self.rect.y
         self._create_header_text_rect()            
         self._create_header_underline_dimensions()
         self._create_race_display_description_rect()
