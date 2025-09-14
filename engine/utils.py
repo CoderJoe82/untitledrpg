@@ -72,7 +72,7 @@ def draw_formatted_text(surface, text_segments, rect, font, alignment="left", ve
 
     return current_y
 
-def measure_formatted_text(text_segments, rect, font): # NEW: Added vert_alignment
+def measure_formatted_text_height(text_segments, rect, font): # NEW: Added vert_alignment
     all_words = []
     for segment_list in text_segments:
         for text, color in segment_list:

@@ -2,7 +2,7 @@ FPS = 60
 
 LARGE_FONT_SIZE = 80
 
-FONT_PATH = "./assets/Cinzel-VariableFont_wght.ttf"
+FONT_PATH = "./assets/Vollkorn-VariableFont_wght.ttf"
 
 # --- Title Screen Constants ---
 TITLE_SCREEN_TEXT_Y_POSITION = 0.30
