@@ -89,7 +89,6 @@ class RaceDataPanel:
         for race in self.race_data:
             if race_id == race['id']:
                 self.current_race = race
-                print(self.current_race)
                 self._setup_race_display_ui()
 
     def draw(self, surface):

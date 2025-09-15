@@ -1,17 +1,16 @@
 import pygame
 from settings import *
 from screens.button import Button
-from data.races.all_races import ALL_RACES
+from data.classes.all_classes import ALL_CLASSES
 from screens.character_creation_phases.character_creation_phase import CharacterCreationPhase
-from screens.character_creation_phases.race_data_ui_panel import RaceDataPanel
+from screens.character_creation_phases.class_data_ui_panel import ClassDataPanel
 from engine.utils import draw_formatted_text
 
-
-class RaceSelectionPhase(CharacterCreationPhase):
+class ClassSelectionPhase(CharacterCreationPhase):
     def __init__(self, screen_manager):
         super().__init__(screen_manager)
         self.manager = screen_manager
-        self.info_panel_data = RaceDataPanel(
+        self.info_panel_data = ClassDataPanel(
             self.manager.data_display_data_panel_x,
             self.manager.data_display_data_panel_y,
             self.manager.data_display_data_panel_width,
@@ -19,35 +18,35 @@ class RaceSelectionPhase(CharacterCreationPhase):
             self.manager.navigation_starting_y,
             self.manager.character_creation_screen_size
         )
-        self.race_data = list(ALL_RACES.values())
-        self._create_race_selection_buttons()
-        self._create_race_navigation_buttons()
+        self.class_data = list(ALL_CLASSES.values())
+        self._create_class_selection_buttons()
+        self._create_class_navigation_buttons()
         self._create_header_text()
 
-    def _create_race_selection_buttons(self):
-        self.race_selection_buttons = []
-        self.race_selection_names = []
-        self.number_of_race_buttons = len(self.race_data)
-        self.full_height_of_race_buttons = (
-            self.manager.button_panel_button_height * self.number_of_race_buttons
+    def _create_class_selection_buttons(self):
+        self.class_selection_buttons = []
+        self.class_selection_names = []
+        self.number_of_class_buttons = len(self.class_data)
+        self.full_height_of_class_buttons = (
+            self.manager.button_panel_button_height * self.number_of_class_buttons
         ) + (
-            self.manager.button_panel_button_padding * (self.number_of_race_buttons - 1)
+            self.manager.button_panel_button_padding * (self.number_of_class_buttons - 1)
         )
         current_y = self.manager.button_panel_button_y - (
-            self.full_height_of_race_buttons / 2
+            self.full_height_of_class_buttons / 2
         )
-        for index, value in enumerate(self.race_data):
+        for index, value in enumerate(self.class_data):
             data = value
-            self.race_selection_names.append(
+            self.class_selection_names.append(
                 {
-                    "key_text": data["id"],
-                    "display_text": data["display_name"],
-                    "font_color": data["font_color"],
+                    "key_text" : data['id'],
+                    "display_text" : data['display_name'],
+                    "font_color" : data['font_color']
                 }
             )
-        for index, value in enumerate(self.race_selection_names):
+        for index, value in enumerate(self.class_selection_names):
             button_names = value
-            self.race_selection_buttons.append(
+            self.class_selection_buttons.append(
                 Button(
                     self.manager.button_panel_button_x,
                     current_y,
@@ -56,28 +55,27 @@ class RaceSelectionPhase(CharacterCreationPhase):
                     [
                         [
                             (
-                                button_names["display_text"][0],
-                                button_names["font_color"],
+                                button_names['display_text'][0],
+                                button_names["font_color"]
                             ),
-                            (button_names["display_text"][1:], WHITE),
+                            (button_names["display_text"][1:], WHITE)
                         ]
                     ],
                     WHITE,
                     pygame.font.Font(
                         FONT_PATH,
-                        CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_FONT_SIZE,
+                        CHARACTER_CREATION_SCREEN_BUTTON_PANEL_BUTTON_FONT_SIZE
                     ),
                     SLATE_GRAY,
                     MOSSY_STONE,
-                    button_names["key_text"],
+                    button_names['key_text']
                 )
             )
             current_y += (
-                self.manager.button_panel_button_height
-                + self.manager.button_panel_button_padding
+                self.manager.button_panel_button_height + self.manager.button_panel_button_padding
             )
 
-    def _create_race_navigation_buttons(self):
+    def _create_class_navigation_buttons(self):
         self.navigation_buttons = []
         self.navigation_button_texts = {"confirm": "Confirm", "go_back": "Go Back"}
         self.number_of_navigation_buttons = len(self.navigation_button_texts)
@@ -118,14 +116,14 @@ class RaceSelectionPhase(CharacterCreationPhase):
             self.manager.phase_title_panel_width,
             self.manager.phase_title_panel_height,
         )
-        self.header_rect_display_text = "Choose Your Race"
+        self.header_rect_display_text = "Choose Your Class"
         self.header_rect_font = pygame.font.Font(FONT_PATH, LARGE_FONT_SIZE)
         self.header_rect_display_text_alignment = "center"
         self.header_rect_display_text_vert_alignment = "center"
 
     def update(self):
         mouse_position = pygame.mouse.get_pos()
-        for button in self.race_selection_buttons:
+        for button in self.class_selection_buttons:
             button.update(mouse_position)
         for button in self.navigation_buttons:
             button.update(mouse_position)
@@ -140,7 +138,7 @@ class RaceSelectionPhase(CharacterCreationPhase):
             self.header_rect_display_text_vert_alignment,
         )
         self.info_panel_data.draw(surface)
-        for button in self.race_selection_buttons:
+        for button in self.class_selection_buttons:
             button.draw(surface)
         for button in self.navigation_buttons:
             button.draw(surface)
@@ -151,10 +149,12 @@ class RaceSelectionPhase(CharacterCreationPhase):
             for button in self.navigation_buttons:
                 if button.is_clicked(event, mouse_position):
                     if button.key_text == "go_back":
-                        self.manager.game.change_game_state("welcome")
+                        self.manager.current_phase = ("race_selection")
                     if button.key_text == "confirm":
-                        if self.info_panel_data.current_race is not None:
-                            self.manager.current_phase = "class_selection"
-            for button in self.race_selection_buttons:
+                        if self.info_panel_data.current_character_class is not None:
+                            print('woop!')
+                        else:
+                            print("You didn't pick a character class")
+            for button in self.class_selection_buttons:
                 if button.is_clicked(event, mouse_position):
-                    self.info_panel_data.set_current_race(button.key_text)
+                    self.info_panel_data.set_current_character_class(button.key_text)

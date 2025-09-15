@@ -5,6 +5,7 @@ from screens.button import Button
 from screens.ui_panel import UI_Panel
 from data.races.all_races import ALL_RACES
 from screens.character_creation_phases.race_selection_phase import RaceSelectionPhase
+from screens.character_creation_phases.class_selection_phase import ClassSelectionPhase
 
 class CharacterCreationScreen(State):
     def __init__(self, game):
@@ -19,10 +20,7 @@ class CharacterCreationScreen(State):
         self._create_navigation_button_dimensions()
         self.phases = {
             'race_selection' : RaceSelectionPhase(self),
-            'class_selection' : {
-                'title' : "Choose your Class",
-                'buttons' : []
-            },
+            'class_selection' : ClassSelectionPhase(self),
             'character_confirmation' : {
                 'title' : 'Your Curreent Character',
                 'buttons' : []

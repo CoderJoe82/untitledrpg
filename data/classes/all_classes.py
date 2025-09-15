@@ -1,3 +1,5 @@
+from settings import *
+
 WARRIOR = {
     'id': 'warrior',
     'display_name': 'Warrior',
@@ -47,7 +49,8 @@ WARRIOR = {
         {'level': 58, 'resistance': 'Toughness', 'amount': 3},
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
     ],
-    'abilities': []
+    'abilities': [],
+    'font_color' : STEEL_RED
 }
 
 MAGE = {
@@ -109,7 +112,8 @@ MAGE = {
         {'level': 55, 'resistance': 'Dark', 'amount': 1},
         {'level': 60, 'resistance': 'Light', 'amount': 1},
     ],
-    'abilities': []
+    'abilities': [],
+    'font_color' : ARCANE_VIOLET
 }
 
 PALADIN = {
@@ -177,7 +181,8 @@ PALADIN = {
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
         {'level': 60, 'resistance': 'Chaos', 'amount': 1},
     ],
-    'abilities': []
+    'abilities': [],
+    'font_color' : DIVINITY_GOLD
 }
 
 RANGER = {
@@ -245,7 +250,8 @@ RANGER = {
         {'level': 60, 'resistance': 'Frost', 'amount': 2},
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
     ],
-    'abilities': []
+    'abilities': [],
+    'font_color' : HUNTER_GREEN
 }
 
 DRUID = {
@@ -313,7 +319,8 @@ DRUID = {
         {'level': 60, 'resistance': 'Poison', 'amount': 2},
         {'level': 60, 'resistance': 'Lightning', 'amount': 1},
     ],
-    'abilities': []
+    'abilities': [],
+    'font_color' : EARTHEN_TEAL
 }
 
 PRIEST = {
@@ -380,7 +387,8 @@ PRIEST = {
         {'level': 60, 'resistance': 'Light', 'amount': 2},
         {'level': 60, 'resistance': 'Chaos', 'amount': 1},
     ],
-    'abilities': []
+    'abilities': [],
+    'font_color' : SERENE_BLUE
 }
 
 
@@ -390,7 +398,7 @@ PRIEST = {
 
 # This dictionary provides easy access to any class's data.
 # Example: CLASSES['warrior']['stats']
-CLASSES = {
+ALL_CLASSES = {
     'warrior': WARRIOR,
     'mage': MAGE,
     'paladin': PALADIN,
