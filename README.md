@@ -1,6 +1,10 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.18
+---
+Now all character creation choices are refactored to not be 'DRY' so far.
+
 V-0.0.17
 ---
 Finished making a class selection phase as well.

@@ -1,7 +1,6 @@
 import pygame
 from settings import *
 from engine.state import State
-from screens.button import Button
 from screens.ui_panel import UI_Panel
 from data.races.all_races import ALL_RACES
 from screens.character_creation_phases.race_selection_phase import RaceSelectionPhase
