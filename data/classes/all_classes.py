@@ -9,6 +9,7 @@ WARRIOR = {
         "A Warrior is a bulwark on the battlefield, protecting their allies and "
         "cleaving through enemy lines."
     ),
+    'primary_stats': ['Strength', 'Constitution'],
     'stats': {
         'strength': 3, 'dexterity': 1, 'constitution': 2, 'intellect': 0, 'wisdom': 0, 'charisma': 0, 'faith': 0,
     },
@@ -49,7 +50,7 @@ WARRIOR = {
         {'level': 58, 'resistance': 'Toughness', 'amount': 3},
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
     ],
-    'abilities': [],
+    'abilities': ['heroic_strike'],
     'font_color' : STEEL_RED
 }
 
@@ -61,6 +62,7 @@ MAGE = {
         "the battlefield. They are powerful but fragile, preferring to keep their "
         "distance while unleashing devastating spells of fire, frost, and lightning."
     ),
+    'primary_stats': ['Intellect', 'Wisdom'],
     'stats': {
         'strength': 0, 'dexterity': 0, 'constitution': 0, 'intellect': 4, 'wisdom': 2, 'charisma': 0, 'faith': 0,
     },
@@ -112,7 +114,7 @@ MAGE = {
         {'level': 55, 'resistance': 'Dark', 'amount': 1},
         {'level': 60, 'resistance': 'Light', 'amount': 1},
     ],
-    'abilities': [],
+    'abilities': ['fire_bolt'],
     'font_color' : ARCANE_VIOLET
 }
 
@@ -124,6 +126,7 @@ PALADIN = {
         "in a dark world. They blend martial prowess with divine magic to protect the "
         "innocent, smite their enemies, and inspire their allies with righteous power."
     ),
+    'primary_stats': ['Faith', 'Strength', 'Constitution'],
     'stats': {
         'strength': 2, 'dexterity': 0, 'constitution': 1, 'intellect': 0, 'wisdom': 1, 'charisma': 1, 'faith': 2,
     },
@@ -181,7 +184,7 @@ PALADIN = {
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
         {'level': 60, 'resistance': 'Chaos', 'amount': 1},
     ],
-    'abilities': [],
+    'abilities': ['smite'],
     'font_color' : DIVINITY_GOLD
 }
 
@@ -193,6 +196,7 @@ RANGER = {
         "They are masters of precision and patience, using their knowledge of the terrain "
         "and their deadly aim to eliminate threats before they ever get close."
     ),
+    'primary_stats': ['Dexterity', 'Wisdom'],
     'stats': {
         'strength': 1, 'dexterity': 3, 'constitution': 1, 'intellect': 0, 'wisdom': 2, 'charisma': 0, 'faith': 0,
     },
@@ -250,7 +254,7 @@ RANGER = {
         {'level': 60, 'resistance': 'Frost', 'amount': 2},
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
     ],
-    'abilities': [],
+    'abilities': ['steady_shot'],
     'font_color' : HUNTER_GREEN
 }
 
@@ -262,6 +266,7 @@ DRUID = {
         "world, calling upon the ferocity of beasts, the resilience of the forest, "
         "and the fury of storms. They can be a gentle healer or a fearsome opponent."
     ),
+    'primary_stats': ['Wisdom', 'Faith'],
     'stats': {
         'strength': 1, 'dexterity': 0, 'constitution': 1, 'intellect': 1, 'wisdom': 2, 'charisma': 0, 'faith': 2,
     },
@@ -319,7 +324,7 @@ DRUID = {
         {'level': 60, 'resistance': 'Poison', 'amount': 2},
         {'level': 60, 'resistance': 'Lightning', 'amount': 1},
     ],
-    'abilities': [],
+    'abilities': ['thorn_lash'],
     'font_color' : EARTHEN_TEAL
 }
 
@@ -331,6 +336,7 @@ PRIEST = {
         "magic. They devote themselves to a higher power, using their faith to mend "
         "wounds, purge darkness, and shield their allies from harm."
     ),
+    'primary_stats': ['Faith', 'Wisdom'],
     'stats': {
         'strength': 0, 'dexterity': 0, 'constitution': 1, 'intellect': 1, 'wisdom': 2, 'charisma': 1, 'faith': 3,
     },
@@ -387,7 +393,7 @@ PRIEST = {
         {'level': 60, 'resistance': 'Light', 'amount': 2},
         {'level': 60, 'resistance': 'Chaos', 'amount': 1},
     ],
-    'abilities': [],
+    'abilities': ['heal'],
     'font_color' : SERENE_BLUE
 }
 

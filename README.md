@@ -1,6 +1,10 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.19
+---
+Weapons are all now currently implemented for the earliest version of the game.
+
 V-0.0.18
 ---
 Now all character creation choices are refactored to not be 'DRY' so far.
