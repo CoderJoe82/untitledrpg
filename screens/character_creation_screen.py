@@ -26,6 +26,10 @@ class CharacterCreationScreen(State):
             }
         }
         self.current_phase = 'race_selection'
+        self.player_choices = {
+            'race' : None,
+            'class' : None
+        }
 
     def _create_character_creation_panel_dimensions(self):
         game_window_width, game_window_height = self.character_creation_screen_size

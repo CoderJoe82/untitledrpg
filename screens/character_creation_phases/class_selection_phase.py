@@ -16,6 +16,7 @@ class ClassSelectionPhase(SelectionPhase):
             return False
         
     def _on_confirm(self):
+        self.manager.player_choices['class'] = self.info_panel_data.current_phase_category
         self.manager.current_phase = 'class_selection'
 
     def _on_go_back(self):

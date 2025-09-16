@@ -50,7 +50,12 @@ WARRIOR = {
         {'level': 58, 'resistance': 'Toughness', 'amount': 3},
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
     ],
-    'abilities': ['heroic_strike'],
+    'abilities': [
+        {
+            'name' : 'heroic_strike',
+            'description': 'Parrying an attack makes your next Heroic Strike a guaranteed critical strike.'
+        }
+    ],        
     'font_color' : STEEL_RED
 }
 
@@ -114,7 +119,12 @@ MAGE = {
         {'level': 55, 'resistance': 'Dark', 'amount': 1},
         {'level': 60, 'resistance': 'Light', 'amount': 1},
     ],
-    'abilities': ['fire_bolt'],
+    'abilities': [
+        {
+            'name' : "fire_bolt",
+            'description': 'Hurls a small bolt of fire at a single target. Your fundamental fire damage spell.'
+        }
+    ],
     'font_color' : ARCANE_VIOLET
 }
 
@@ -184,7 +194,12 @@ PALADIN = {
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
         {'level': 60, 'resistance': 'Chaos', 'amount': 1},
     ],
-    'abilities': ['smite'],
+    'abilities': [
+        {
+            'name' : 'smite',
+            'description': 'Smites an enemy with holy light, dealing a low amount of Light damage. Your primary attack.'
+        }
+    ],
     'font_color' : DIVINITY_GOLD
 }
 
@@ -254,7 +269,12 @@ RANGER = {
         {'level': 60, 'resistance': 'Frost', 'amount': 2},
         {'level': 60, 'resistance': 'Toughness', 'amount': 3},
     ],
-    'abilities': ['steady_shot'],
+    'abilities': [
+        {
+            'name' : 'steady_shot',
+            'description': 'A carefully aimed shot that deals moderate physical damage. Can be cast while moving.'
+        }
+    ],
     'font_color' : HUNTER_GREEN
 }
 
@@ -324,7 +344,12 @@ DRUID = {
         {'level': 60, 'resistance': 'Poison', 'amount': 2},
         {'level': 60, 'resistance': 'Lightning', 'amount': 1},
     ],
-    'abilities': ['thorn_lash'],
+    'abilities': [
+        {
+            'name' : "thorn_lash",
+            'description': 'Lashes a target with a thorny vine, dealing minor physical Nature damage.'
+        }
+    ],
     'font_color' : EARTHEN_TEAL
 }
 
@@ -393,7 +418,12 @@ PRIEST = {
         {'level': 60, 'resistance': 'Light', 'amount': 2},
         {'level': 60, 'resistance': 'Chaos', 'amount': 1},
     ],
-    'abilities': ['heal'],
+    'abilities': [
+        {
+            'name' : 'heal',
+            'description': 'A slow but powerful and efficient spell that heals a single ally for a large amount.'
+        }
+    ],
     'font_color' : SERENE_BLUE
 }
 

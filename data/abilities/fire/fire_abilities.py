@@ -18,7 +18,7 @@ critical strikes to trigger explosive chain reactions.
 
 FIRE_BOLT = {
     'id': 'fire_bolt', 'display_name': 'Fire Bolt',
-    'description': 'Hurls a small bolt of fire at a single target. Your fundamental damage spell.',
+    'description': 'Hurls a small bolt of fire at a single target. Your fundamental fire damage spell.',
     'level_req': 1, 'mana_cost': 10, 'cooldown': 0.0, 'casting_time': 1.0, 'target_type': 'single', 'range': 25,
     'effects': [{'type': 'direct_damage', 'damage_type': 'Fire', 'min_damage': 8, 'max_damage': 12}]
 }
