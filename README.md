@@ -1,6 +1,10 @@
 # untitledrpg
 Using AI to help mentor me to make an rpg game so I learn how to do this with assitance and not being handed direct code.
 
+V-0.0.21
+---
+Started working on getting the Enter youre name Phase. Almost complete.
+
 V-0.0.20
 ---
 Minor update to track where I am. Not as much time today. I just wired up my buttons to store which race and class the player picked during character creation.

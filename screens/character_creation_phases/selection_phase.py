@@ -9,7 +9,6 @@ class SelectionPhase(CharacterCreationPhase):
     def __init__(self, screen_manager, data_list, header_rect_text, panel):
         super().__init__(screen_manager)
         self.manager = screen_manager
-        self.panel = panel
         self.info_panel_data = panel(
             self.manager.data_display_data_panel_x,
             self.manager.data_display_data_panel_y,
