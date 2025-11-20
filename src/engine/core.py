@@ -1,6 +1,7 @@
 import pygame
 import sys
 from settings import SCREEN_WIDTH, SCREEN_HEIGHT, FRAME_RATE, GAME_TITLE
+from models.player import Player
 
 class Game():
     def __init__(self):
@@ -10,12 +11,14 @@ class Game():
         self.clock = pygame.time.Clock()
         self.background = pygame.image.load('assets/images/title_screen_background.png')
         self.is_running = True
+        self.player = Player()
+        print(f"Player created with {self.player.hp} HP")
 
     def run(self):
         while self.is_running:
             self.handle_events()
             self.update()
-            self.draw()
+            # self.draw()
             self.clock.tick(FRAME_RATE)
 
     def handle_events(self):
