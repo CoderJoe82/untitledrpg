@@ -1,5 +1,5 @@
 import pygame
-from src.settings improt WHITE
+from src.settings import WHITE
 
 class TextRenderer():
     def __init__(self):
